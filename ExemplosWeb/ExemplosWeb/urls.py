@@ -19,17 +19,23 @@ from django.urls.conf import include
 from ExemplosWeb.views import homepage, homeSec , registro, secreto
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls.base import reverse_lazy
-
+from . import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     path("contatos/", include ('contatos.urls')),
-    path('',homepage,name = 'tela-inicial'),
-    path('accounts/',homeSec,name='sec-home'),
+    path('',views.ProdutoListView.as_view(),name='sec-home'),
     path('accounts/registro/',registro, name = 'sec-registro'),
-    path('accounts/login/',LoginView.as_view(template_name = 'registro/login.html'), name = 'sec-login'),
+    path('accounts/profile/',secreto, name='sec-secreta'),
+
     path('secreto/',secreto, name='sec-secreta'),
+    path('secreto/cria',views.ProdutoCreateView.as_view(), name='sec-secreta-create'),
+    path('secreto/visualiza',views.ProdutoListViewSec.as_view(),name='sec-secreta-read'),
+    path('secreto/atualiza/<int:pk>/',views.ProdutoUpdateView.as_view(),name='sec-secreta-update'),
+    path('secreto/deleta/<int:pk>/',views.ProdutoDeleteView.as_view(),name='sec-secreta-delete'),
+    path('accounts/login/',LoginView.as_view(template_name = 'registro/login.html'), name = 'sec-login'),
     path('accounts/logout/', LogoutView.as_view(next_page = reverse_lazy('sec-login')),name='sec-logout'),
 
 ]
