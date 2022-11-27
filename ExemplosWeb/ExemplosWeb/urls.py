@@ -25,7 +25,6 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path("contatos/", include ('contatos.urls')),
     path('',views.ProdutoListView.as_view(),name='sec-home'),
     path('accounts/registro/',registro, name = 'sec-registro'),
     path('accounts/profile/',secreto, name='sec-secreta'),
