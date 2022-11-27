@@ -9,3 +9,5 @@ Funcionarios devem fazer login na aba "Login" e, caso não tenham conta, devm se
 Vale ressaltar que todo funcionário deve ter seu usuário no formato "area-nome", tendo seu departamento descrito na primeira parte.
 Por exemplo, o João do departamento de brinquedos, pode se chamar "brinquedos-joao".
 Após fazer login, é possível cadastrar produtos novos de seu departamnento na aba "Cadastro de Produtos" ou executar operações de CRUD sobre os itens de seu departamento em "Visualizar Produtos".
+
+Site: https://inf1407t2.herokuapp.com
