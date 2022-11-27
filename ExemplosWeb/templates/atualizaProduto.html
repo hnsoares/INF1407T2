@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualiza Produtos</title>
+    <link rel="stylesheet" href="{% static '/css/estilo.css' %}">
+    
+</head>
+<body>
+    {% include 'baseCRUD.html' %}
+  <h1>Atualização de Produtos</h1>
+  <form method="POST" class='formulario'>
+    {% csrf_token %}
+    <table>
+      {{ produto.as_table }}
+        <tr>
+          <td></td>
+          <td><input type="submit" value="Atualizar"></td>
+        </tr>
+    </table>
+  </form>
+</body>
+</html>
